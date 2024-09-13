@@ -6,8 +6,6 @@ import ParentComponent from "./components/ParentComponent.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ParentComponent>
-      <App />
-    </ParentComponent>
+    <App />
   </StrictMode>
 );
