@@ -1,30 +1,25 @@
-import React from "react";
-import UseStateDemo from "./components/UseStateDemo";
 import "./App.css";
-import Tab from "./components/Tab";
-import UseEffectDemo from "./components/UseEffectDemo";
-import UseReducerDemo from "./components/UseReducerDemo";
-import ChildrenComponent from "./components/ChildrenComponent";
-// import GrandChildrenComponent from "./components/GrandChildrenComponent";
-import Todolist from "./components/Todolist";
-import UseRefDemo from "./components/UseRefDemo";
+import DemoUseEffect from "./components/DemoUseEffect";
+import DemoUseReducer from "./components/DemoUseReducer";
+import DemoUseRef from "./components/DemoUseRef";
+import DemoUseState from "./components/DemoUseState";
 import ParentComponent from "./components/ParentComponent";
-import UseMemoDemo from "./components/UseMemoDemo";
+import UserProvider from "./provider/UserProvider";
 
-export default function App() {
+function App() {
   return (
-    <div>
-      {/* <UseStateDemo /> */}
-      {/* <Tab /> */}
-      {/* <UseEffectDemo /> */}
-      {/* <UseReducerDemo />
-      <ChildrenComponent />
-      <GrandChildrenComponent /> */}
-      {/* <Todolist /> */}
-      {/* <UseRefDemo /> */}
+    <>
+      {/* <DemoUseState /> */}
 
-      {/* <ParentComponent /> */}
-      <UseMemoDemo />
-    </div>
+      {/* <DemoUseEffect /> */}
+
+      {/* <DemoUseReducer /> */}
+
+      {/* <UserProvider></UserProvider> */}
+
+      <DemoUseRef />
+    </>
   );
 }
+
+export default App;

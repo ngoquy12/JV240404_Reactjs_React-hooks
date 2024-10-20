@@ -1,20 +1,37 @@
-// import React, { useContext } from "react";
-// import { ThemeProvider } from "./ParentComponent";
+import React, { useContext } from "react";
+import { UserContext } from "../provider/UserProvider";
 
-// export default function GrandChildrenComponent() {
-//   // Bước 3: Lấy dữ liệu từ Cha
-//   const { theme, handleChangeTheme } = useContext(ThemeProvider);
+export default function GrandChildrenComponent() {
+  // Lấy giá trị từ context
+  const { userName, handleChangeName, users } = useContext(UserContext);
 
-//   return (
-//     <>
-//       <div
-//         className={`${theme === "light" ? "light" : "dark"}`}
-//         style={{ height: 400, width: 400, border: "1px solid #dadada" }}
-//       >
-//         GrandChildrenComponent
-//       </div>
+  const handleChangeUserName = () => {
+    handleChangeName();
+  };
 
-//       <button onClick={handleChangeTheme}>Toggle theme</button>
-//     </>
-//   );
-// }
+  return (
+    <div>
+      <h3>Name: {userName}</h3>
+      <button onClick={handleChangeUserName}>Change Name</button>
+
+      <ul>
+        {/* {users.map((user, index) => (
+          <li>
+            <p>Id: {user.id}</p>
+            <p>Name: {user.name}</p>
+            <p>Age: {user.age}</p>
+          </li>
+        ))} */}
+        {users.map((user, index) => {
+          return (
+            <li key={user.id}>
+              <p>Id: {user.id}</p>
+              <p>Name: {user.name}</p>
+              <p>Age: {user.age}</p>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}

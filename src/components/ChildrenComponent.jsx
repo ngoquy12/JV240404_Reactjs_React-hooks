@@ -1,17 +1,11 @@
-import React, { memo } from "react";
+import React from "react";
+import GrandChildrenComponent from "./GrandChildrenComponent";
 
-// memo là một HOC (Higher Order Component)
-// Sử dụng toán tử strict (===) - Khi 1 prop thay đổi, thì component bị re-render
-
-function ChildrenComponent({ onHandleCount }) {
-  console.log("re-render");
-
+export default function ChildrenComponent() {
   return (
     <div>
-      ChildrenComponent
-      <button onClick={onHandleCount}>Count</button>
+      <h1>ChildrenComponent</h1>
+      <GrandChildrenComponent />
     </div>
   );
 }
-
-export default memo(ChildrenComponent);
